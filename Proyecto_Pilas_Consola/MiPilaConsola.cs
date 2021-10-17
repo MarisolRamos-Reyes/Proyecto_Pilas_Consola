@@ -36,17 +36,16 @@ namespace Proyecto_Pilas_Consola
                 _tope = _tope.Siguiente;
             }
         }
-        public void Guardar(string nombreArchivo)
+        public void Guardar()
         {
 
-            NodoPilaConsola t =_tope ;
+            NodoPilaConsola t = _tope;
 
             if (_tope == null)
             {
                 return;
             }
-            nombreArchivo = "ArchivoPilaConsola";
-            string path = @"c:\Pilas\" + nombreArchivo + ".txt";
+            string path = @"c:\Pilas\ArchivoPilaConsola.txt";
             using (StreamWriter sw = File.CreateText(path))
             {
                 do
@@ -57,13 +56,12 @@ namespace Proyecto_Pilas_Consola
                 return;
             }
         }
-        public void Cargar(string nombreArchivo)
+        public void Cargar()
         {
-            nombreArchivo = "ArchivoPilaConsola";
             string buscar = @"C:\Pilas\ArchivoPilaConsola.txt";
             if (File.Exists(buscar))
             {
-                string[] lineas = File.ReadAllLines(@"C:\Pilas\" + nombreArchivo + ".txt");
+                string[] lineas = File.ReadAllLines(@"C:\Pilas\ArchivoPilaConsola.txt");
                 foreach (var linea in lineas)
                 {
                     if (linea.Length == 0)

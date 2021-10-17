@@ -29,10 +29,10 @@ namespace Proyecto_Pilas_Consola
             MP.Pop();
             Console.WriteLine(MP.ToString());
 
-            MP.Guardar("ArchivoPilaConsola");
+            MP.Guardar();
 
             Console.WriteLine("Cargar");
-            MP.Cargar("ArchivoPilaConsola");
+            MP.Cargar();
             Console.WriteLine(MP.ToString());
             Console.ReadKey();
         }
